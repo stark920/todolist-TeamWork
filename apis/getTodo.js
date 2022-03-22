@@ -1,5 +1,6 @@
 const {successHandle, errorHandle} = require('../handler/index')
 
+/** 更新所有Todo資料 */
 const getTodo = (res, todos) => {
   try {
     successHandle(res, todos)
