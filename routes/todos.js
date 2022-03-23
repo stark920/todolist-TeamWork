@@ -12,7 +12,9 @@ const todos = [
 ]
 
 const todosRoute = (req, res) => {
+  // http 傳來的 body 資訊
   let body = ''
+  // 當 req 收到片段的 chunk 時，將資料加入 body 內
   req.on('data', dataChunks => {
     body += dataChunks
   })
@@ -23,6 +25,7 @@ const todosRoute = (req, res) => {
       getTodo(res, todos)
       break
     case 'POST':
+      // 當 req 收完資料時，執行新增單筆代辦的功能
       req.on('end', () => {
         postTodo(req, res, body, todos)
       })
@@ -31,6 +34,7 @@ const todosRoute = (req, res) => {
       deleteTodo(req, res, todos)
       break
     case 'PATCH':
+      // 當 req 收完資料時，執行編輯單筆代辦的功能
       req.on('end', () => {
         patchTodo(req, res, body, todos)
       })
