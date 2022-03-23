@@ -6,6 +6,7 @@ const REQUEST_METHOD = Object.freeze({
   OPTIONS: 'OPTIONS',
 })
 
+/** cors 跨網域設定 */
 const HEADERS = {
   'Access-Control-Allow-Headers':
     'Content-Type, Authorization, Content-Length, X-Requested-With',

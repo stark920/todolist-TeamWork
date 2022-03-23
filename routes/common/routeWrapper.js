@@ -1,6 +1,7 @@
 const {errorHandle} = require('../../handler/index')
 const isRouteError = require('../routeErrorHandler/index')
 
+/** 404 response*/
 const routeWrapper = (routePath, targetRoute) => {
   return (req, res) => {
     if (isRouteError(req, routePath)) {
